@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bance Paris</string>
+    <string name="name_shop">Shop</string>
+    <string name="name_account">Account</string>
+    <string name="name_caddy">Caddy</string>
+    <string name="name_home">Home</string>
+    <string name="Welcome">Welcome</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_shop"
+          android:title="@string/name_shop"
+        />
+    <item android:id="@+id/action_account"
+        android:title="@string/name_account"
+        />
+    <item android:id="@+id/action_caddy"
+        android:title="@string/name_caddy"
+        />
+    <item android:id="@+id/action_home"
+        android:title="@string/name_home"
+        />
+
+</menu>
