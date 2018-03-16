@@ -58,11 +58,6 @@ public class ShopActivity extends AppCompatActivity {
             if(goToLocation.resolveActivity(getPackageManager())!=null){
                 startActivity(goToLocation);
             }
-
-
-
-
-
         }
         return true;
 
