@@ -26,7 +26,8 @@
         <activity
             android:name=".ShopActivity"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".Authentification"></activity>
+        <activity android:name=".Authentification" />
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>

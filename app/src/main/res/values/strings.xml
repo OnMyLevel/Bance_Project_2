@@ -4,5 +4,12 @@
     <string name="name_account">Account</string>
     <string name="name_caddy">Caddy</string>
     <string name="name_home">Home</string>
-    <string name="Welcome">Welcome</string>
+    <string name="copyRight">Copyright © 2017 Bance</string>
+    <string name="titleWelcome">Welcome to BANCE</string>
+    <string name="signUp">Sign Up</string>
+    <string name="signIn">Sign In</string>
+    <string name="textIntro">Le Lorem Ipsum est simplement du faux texte faux texte les années 1500, quand un peintre anonyme assemde polices de texte. Il n\'a pas fait que survivre cinq siècles,</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="id">Id</string>
 </resources>
