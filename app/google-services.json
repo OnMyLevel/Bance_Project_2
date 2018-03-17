@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "893912117702",
+    "firebase_url": "https://bance-c21e5.firebaseio.com",
+    "project_id": "bance-c21e5",
+    "storage_bucket": "bance-c21e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893912117702:android:abdedca22dfda881",
+        "android_client_info": {
+          "package_name": "com.example.christanismerilbanzouzi.bance_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893912117702-l41kvqv0adk04kcs0fauv4cmtoku8mam.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.christanismerilbanzouzi.bance_project",
+            "certificate_hash": "1de33b7e168e4ef0c082289d55ca4120d5e0846d"
+          }
+        },
+        {
+          "client_id": "893912117702-33uurpebhn99bqi5pk5hi74k7ahld22v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaE3JXG3f2MFURmiTBdm_RDMk_Yt_FRTc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893912117702-33uurpebhn99bqi5pk5hi74k7ahld22v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
