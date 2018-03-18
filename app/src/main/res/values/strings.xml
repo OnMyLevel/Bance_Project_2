@@ -13,4 +13,6 @@
     <string name="name">Name</string>
     <string name="id">Id</string>
     <string name="currentuser">CurrentUser</string>
+    <string name="avaible_article_on">Avaible article on</string>
+    <string name="avaible_article_price">Price :</string>
 </resources>
