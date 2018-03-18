@@ -56,9 +56,12 @@ public class Authentification extends AppCompatActivity {
                             if (userTmp.getPassword().equals(editPassword.getText().toString())) {
                                 Toast.makeText(Authentification.this, "Sign in successfully",
                                         Toast.LENGTH_SHORT).show();
+
+                                // si l'user c'est connecté à l'application:
                                 Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
+                                startActivity(sartItent);
                             } else {
-                                Toast.makeText(Authentification.this, "Sign in Failed !!",
+                                Toast.makeText(Authentification.this, "Wrong password !!",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }
