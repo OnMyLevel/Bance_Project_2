@@ -17,7 +17,7 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/editPhone"
-            android:hint="Phone Number"
+            android:hint="id user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/colorBlack"

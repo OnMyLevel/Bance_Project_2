@@ -7,7 +7,6 @@ import android.widget.EditText;
 public class SignUp extends AppCompatActivity {
     EditText editPhone,editPassword,editName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

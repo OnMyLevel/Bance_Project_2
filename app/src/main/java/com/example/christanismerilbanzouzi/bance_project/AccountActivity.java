@@ -8,10 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.example.christanismerilbanzouzi.bance_project.Common.Common;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AccountActivity extends AppCompatActivity {
 
     private Toolbar myToolBar;
+    TextView currentUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +25,8 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account);
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
-
+        currentUser= (TextView) findViewById(R.id.currentuser);
+        currentUser.setText(Common.currentUser.getName().toString());
     }
 
     @Override

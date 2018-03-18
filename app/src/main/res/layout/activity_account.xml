@@ -23,4 +23,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/if_account_1954192" />
+
+    <TextView
+        android:id="@+id/currentuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/currentuser"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
 </android.support.constraint.ConstraintLayout>

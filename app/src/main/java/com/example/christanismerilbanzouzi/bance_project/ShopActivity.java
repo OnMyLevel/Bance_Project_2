@@ -9,9 +9,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ShopActivity extends AppCompatActivity {
 
     private Toolbar myToolBar;
+    FirebaseDatabase database;
+    DatabaseReference article;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,10 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
+
+        // Init dataBase
+        database = FirebaseDatabase.getInstance();
+        article=database.getReference("Article");
 
     }
 

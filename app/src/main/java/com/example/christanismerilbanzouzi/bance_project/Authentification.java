@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -47,7 +48,7 @@ public class Authentification extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        //Check if user not exits in datatbase
+                        //Check if user not exits in database
                         Log.i("test BDD", ""+dataSnapshot.child(editId.getText().toString()).exists() );
 
                         if(dataSnapshot.child(editId.getText().toString()).exists()){
@@ -59,7 +60,9 @@ public class Authentification extends AppCompatActivity {
 
                                 // si l'user c'est connecté à l'application:
                                 Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
+                                Common.currentUser= userTmp;
                                 startActivity(sartItent);
+                                finish();
                             } else {
                                 Toast.makeText(Authentification.this, "Wrong password !!",
                                         Toast.LENGTH_SHORT).show();
