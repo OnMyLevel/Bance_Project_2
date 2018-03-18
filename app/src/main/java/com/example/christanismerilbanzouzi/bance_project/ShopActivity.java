@@ -50,6 +50,7 @@ public class ShopActivity extends AppCompatActivity {
         recycler_article.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
         recycler_article.setLayoutManager(layoutManager);
+        /*onLoad();*/
 
     }
 
@@ -168,7 +169,5 @@ public class ShopActivity extends AppCompatActivity {
         Log.i("TEST", "loadArticle: END"+adapter.toString());
         recycler_article.setAdapter(adapter);
     }
-
-
 
 }
