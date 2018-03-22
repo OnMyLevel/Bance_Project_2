@@ -59,7 +59,7 @@ public class Authentification extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
 
                                 // si l'user c'est connecté à l'application:
-                                Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
+                                Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
                                 Common.currentUser= userTmp;
                                 startActivity(sartItent);
                                 finish();

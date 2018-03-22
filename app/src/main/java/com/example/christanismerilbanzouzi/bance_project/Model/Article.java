@@ -11,7 +11,6 @@ public class Article {
     private String Price;
 
 
-
     public Article(String name, String image, String price) {
         this.Name = name;
         this.Image = image;
@@ -25,7 +24,7 @@ public class Article {
     @Override
     public String toString() {
         return "Article{" +
-                "Iame='" + Name + '\'' +
+                "Name='" + Name + '\'' +
                 ", Image='" + Image + '\'' +
                 ", Price=" + Price +
                 '}';
@@ -47,8 +46,7 @@ public class Article {
         this.Image = dmageUrl;
     }
 
-    public String getPrice() {
-        return Price;
+    public String getPrice() {return Price;
     }
 
     public void setPrice(String price) {

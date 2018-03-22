@@ -2,6 +2,7 @@ package com.example.christanismerilbanzouzi.bance_project;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,12 +34,14 @@ public class ShopActivity extends AppCompatActivity {
     RecyclerView recycler_article;
     RecyclerView.LayoutManager layoutManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
         myToolBar =findViewById(toolbar);
         setSupportActionBar(myToolBar);
+
 
         // Init dataBase
         article = FirebaseDatabase.getInstance().getReference().child("Article");

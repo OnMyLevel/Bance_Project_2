@@ -8,11 +8,30 @@
     <string name="titleWelcome">Welcome to BANCE</string>
     <string name="signUp">Sign Up</string>
     <string name="signIn">Sign In</string>
-    <string name="textIntro">Le Lorem Ipsum est simplement du faux texte faux texte les années 1500, quand un peintre anonyme assemde polices de texte. Il n\'a pas fait que survivre cinq siècles,</string>
+    <string name="textIntro">Le Lorem Ipsum est simplement du faux texte faux
+        texte les années 1500, quand un peintre anonyme assemde
+        polices de texte. Il n\'a pas fait que survivre cinq siècles,</string>
     <string name="password">Password</string>
     <string name="name">Name</string>
     <string name="id">Id</string>
     <string name="currentuser">CurrentUser</string>
-    <string name="avaible_article_on">Avaible article on</string>
+    <string name="avaible_article_on">Article disponible </string>
     <string name="avaible_article_price">Price :</string>
+    <string name="nouvelle_collection">Nouvelle collection</string>
+    <string name="current_date">23/04/2017</string>
+    <string name="intrVeste">Veste BANCE noir sans capuche BANCE</string>
+    <string name="currentDate">Date:27/04/2017</string>
+    <string name="new_collection">New Collection</string>
+    <string name="vestSanCapuche">Vest SANS CAPUCHE</string>
+    <string name="user_name">Nom de l'user</string>
+    <string name="hello">Bonjour</string>
+    <string name="username">SPRING VIBES </string>
+    <string name="promotitle">*-20% sur les PULL *</string>
+    <string name="descriptionveste">La collection homme BANCE clôture la saison avec
+        les toutes dernières tendances et les articles les plus branchés.
+        Le tout, conçu à Londres et vendu à travers le monde entier.
+        Mettez vos indispensables au goût, les toutes dernières tendances et les articles les plus branchés.
+        Le tout, conçu à Londres et vendu  </string>
+    <string name="details">Details</string>
+    <string name="votrepanier">Votre Pannier</string>
 </resources>
