@@ -65,7 +65,6 @@ public class ShopActivity extends AppCompatActivity {
     }
 
     public static  class ArticleViewHolders extends  RecyclerView.ViewHolder{
-
         View mView;
         public ArticleViewHolders(View itemView) {
             super(itemView);
@@ -75,20 +74,16 @@ public class ShopActivity extends AppCompatActivity {
         public void setName(String name){
             TextView article_name= (TextView) mView.findViewById(recycler_article_name);
             article_name.setText(name);
-
         }
 
         public void setImage(Context ctx,String image){
             ImageView article_image= (ImageView) mView.findViewById(recycler_article_image);
             Picasso.with(ctx).load(image).into(article_image);
-
         }
 
         public void setPrice(String price){
             TextView article_price= (TextView) mView.findViewById(recycler_article_price);
             article_price.setText(price);
-
-
         }
     }
 
@@ -131,7 +126,6 @@ public class ShopActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.i("LOG", "onStart: DEBUT ");
-
         FirebaseRecyclerAdapter<Article,ArticleViewHolders> adapter = new FirebaseRecyclerAdapter<Article,ArticleViewHolders>
                 (Article.class,R.layout.article_item,ArticleViewHolders.class,article){
                     @Override
@@ -142,7 +136,6 @@ public class ShopActivity extends AppCompatActivity {
                         viewHolder.setPrice(String.valueOf(model.getPrice()));
                         viewHolder.setImage(getApplicationContext(),model.getImage());
                     }
-
                 };
         Log.i("TEST", "onStart: END");
         recycler_article.setAdapter(adapter);

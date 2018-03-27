@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -87,9 +88,12 @@ public class Detailsctivity extends AppCompatActivity {
                 inserDataArtcile();
             }
         });
+    }
 
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main,menu);
+        return true;
     }
 
     @Override
@@ -139,7 +143,7 @@ public class Detailsctivity extends AppCompatActivity {
                 (prix.getText() != null || prix.getText() != "") &&
                 (imageUri !=null || imageUri!="") ){
             Log.i("IN THE IF", "inserDataArtcile: ");
-            Article upload = new Article(nameAcrticle.getText().toString(),imageUri.toString(),prix.toString());
+            Article upload = new Article(nameAcrticle.getText().toString(),imageUri.toString(),prix.getText().toString());
             String uploadId = mDatabaseRef.push().getKey();
             mDatabaseRef.child(uploadId).setValue(upload);
             Toast.makeText(this," Ajouter au Pannier ",Toast.LENGTH_SHORT).show();

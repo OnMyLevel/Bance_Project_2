@@ -27,7 +27,6 @@ public class AccountActivity extends AppCompatActivity {
         setSupportActionBar(myToolBar);
         currentUser= (TextView) findViewById(R.id.currentuser);
         currentUser.setText(Common.currentUser.getName().toString());
-
     }
 
     @Override

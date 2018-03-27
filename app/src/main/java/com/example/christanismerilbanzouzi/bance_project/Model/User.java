@@ -6,6 +6,7 @@ package com.example.christanismerilbanzouzi.bance_project.Model;
 
 public class User {
 
+    private int NombreCmd;
     private String Name;
     private String Password;
 
@@ -17,13 +18,33 @@ public class User {
 
         Name = name;
         Password = password;
+        NombreCmd = 0;
     }
 
-    public  User(int IdClient,String name,String password){
+    @Override
+    public String toString() {
+        return "User{" +
+                "NombreCmd=" + NombreCmd +
+                ", Name='" + Name + '\'' +
+                ", Password='" + Password + '\'' +
+                '}';
+    }
+
+    public void setNombreCmd(int nombreCmd) {
+        NombreCmd = nombreCmd;
+    }
+
+    public int getNombreCmd() {
+
+        return NombreCmd;
+    }
+
+    public  User(int IdClient, String name, String password){
 
 
         this.Name= name;
         this.Password=password;
+        this.NombreCmd = 0;
     }
 
     public void setName(String name) {
@@ -41,14 +62,5 @@ public class User {
     public String getPassword() {
         return Password;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                ", Name='" + Name + '\'' +
-                ", Password='" + Password + '\'' +
-                '}';
-    }
-
 
 }
