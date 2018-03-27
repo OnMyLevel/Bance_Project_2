@@ -23,7 +23,7 @@
     <string name="currentDate">Date:27/04/2017</string>
     <string name="new_collection">New Collection</string>
     <string name="vestSanCapuche">Vest SANS CAPUCHE</string>
-    <string name="user_name">Nom de l'user</string>
+    <string name="user_name">Nom de User</string>
     <string name="hello">Bonjour</string>
     <string name="username">SPRING VIBES </string>
     <string name="promotitle">*-20% sur les PULL *</string>
@@ -34,4 +34,10 @@
         Le tout, conçu à Londres et vendu  </string>
     <string name="details">Details</string>
     <string name="votrepanier">Votre Pannier</string>
+    <string name="description_article">...</string>
+    <string name="prix">Prix</string>
+    <string name="image_artcicle">Image Artcicle</string>
+    <string name="ajouter_au_pannier">Ajouter Au Pannier</string>
+    <string name="gallerie">*GALLERIE*</string>
+    <string name="deailles">Detaille</string>
 </resources>

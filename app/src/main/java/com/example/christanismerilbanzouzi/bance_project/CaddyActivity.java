@@ -1,6 +1,7 @@
 package com.example.christanismerilbanzouzi.bance_project;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,6 +22,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.christanismerilbanzouzi.bance_project.Adapter.ArticleLongAdapter;
 import com.example.christanismerilbanzouzi.bance_project.Model.ArticleLong;
+import com.google.android.gms.vision.text.Text;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,18 +30,25 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class CaddyActivity extends AppCompatActivity {
+public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapter.OnItemClickListener {
+
+    public  static  final  String EXTRA_URL ="Image";
+    public  static  final  String EXTRA_NAME ="Name";
+    public  static  final  String EXTRA_PRICE ="Price";
+    public  static  final  String EXTRA_DESC="Description";
 
     private Toolbar myToolBar;
     private RecyclerView recyclerView;
     private ArticleLongAdapter articleLongAdapter;
     private ArrayList<ArticleLong> myTable;
     private RequestQueue myRequest;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caddy);
+
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
 
@@ -48,6 +58,9 @@ public class CaddyActivity extends AppCompatActivity {
         myTable= new ArrayList<>();
         myRequest = Volley.newRequestQueue(this);
         parseJson();
+        textView = (TextView) findViewById(R.id.text_gallerie);
+        Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
+        textView.setTypeface(myCust);
 
     }
 
@@ -77,6 +90,7 @@ public class CaddyActivity extends AppCompatActivity {
                         }
                         articleLongAdapter = new ArticleLongAdapter(CaddyActivity.this,myTable);
                         recyclerView.setAdapter(articleLongAdapter);
+                        articleLongAdapter.setOnItemClickListener(CaddyActivity.this);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -108,12 +122,12 @@ public class CaddyActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
-            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class );
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_shop){
             Log.i("Action_Shop", "In action Shop");
-            Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
+            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_home){
@@ -131,5 +145,19 @@ public class CaddyActivity extends AppCompatActivity {
             }
         }
         return true;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent detailsIntent = new Intent(this,Detailsctivity.class);
+        ArticleLong clickitem =   myTable.get(position);
+
+        detailsIntent.putExtra(EXTRA_URL,clickitem.getImage());
+        detailsIntent.putExtra(EXTRA_NAME,clickitem.getName());
+        detailsIntent.putExtra(EXTRA_PRICE,clickitem.getPrice());
+        detailsIntent.putExtra(EXTRA_DESC,clickitem.getDescription());
+
+        startActivity(detailsIntent);
+
     }
 }

@@ -34,9 +34,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="135dp"
+        android:scrollbars="vertical"
         android:id="@+id/myrecyclerView">
     </android.support.v7.widget.RecyclerView>
 
-
+    <TextView
+        android:id="@+id/text_gallerie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlePanier"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:textSize="50sp"
+        android:textColor="@color/colorBlack"
+        android:text="@string/gallerie" />
 
 </RelativeLayout>

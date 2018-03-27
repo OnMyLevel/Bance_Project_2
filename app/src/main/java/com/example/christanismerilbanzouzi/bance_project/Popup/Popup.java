@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
+import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.R;
 
 /**
@@ -33,7 +34,7 @@ public class Popup extends Activity {
         textCurentUser.setTypeface(myCust);
         int width = (int)((dm.widthPixels)*0.5);
         int height= (int) ((dm.heightPixels)*0.3);
-
         getWindow().setLayout(width,height);
+        Common.Pop = false;
     }
 }

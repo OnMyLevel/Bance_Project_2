@@ -45,7 +45,9 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(myToolBar);
         myToolBar.setTitle("Home");
         currentUser = (TextView) findViewById(R.id.currentuser);
-        startActivity(new Intent(HomeActivity.this, Popup.class));
+        if(Common.Pop == true) {
+            startActivity(new Intent(HomeActivity.this, Popup.class));
+        }
         textNews = (TextView) findViewById(R.id.titleNews);
         Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
         textNews.setTypeface(myCust);
@@ -67,12 +69,12 @@ public class HomeActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
-            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_shop){
             Log.i("Action_Shop", "In action Shop");
-            Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
+            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_home){

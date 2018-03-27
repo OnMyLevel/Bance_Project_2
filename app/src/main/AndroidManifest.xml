@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.christanismerilbanzouzi.bance_project">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,10 +30,11 @@
             android:name=".ShopActivity"
             android:parentActivityName=".HomeActivity" />
         <activity android:name=".Authentification" />
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".Popup.Popup"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
-
+        <activity android:name=".SignUp" />
+        <activity
+            android:name=".Popup.Popup"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".Detailsctivity"></activity>
     </application>
 
 </manifest>

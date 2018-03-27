@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.christanismerilbanzouzi.bance_project.Interface.ItemClickListener;
 import com.example.christanismerilbanzouzi.bance_project.Model.ArticleLong;
 import com.example.christanismerilbanzouzi.bance_project.R;
 import com.squareup.picasso.Picasso;
@@ -21,6 +22,15 @@ import java.util.ArrayList;
 public class ArticleLongAdapter extends RecyclerView.Adapter<ArticleLongAdapter.ArticleLongViewHolder> {
     private Context context;
     private ArrayList<ArticleLong> mlist;
+    private OnItemClickListener mListener;
+    //Interface on itemclick view
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
 
     public ArticleLongAdapter(Context excontext,ArrayList<ArticleLong> exmlist){
         context=excontext;
@@ -63,6 +73,19 @@ public class ArticleLongAdapter extends RecyclerView.Adapter<ArticleLongAdapter.
             imageView = itemView.findViewById(R.id.articleImage);
             textView = itemView.findViewById(R.id.articleName);
             textViewT=itemView.findViewById(R.id.articlePrice);
+
+            // on rajoute notre onclickListener pour avoir les détail de l'article
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

@@ -45,12 +45,12 @@ public class AccountActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
-            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_shop){
             Log.i("Action_Shop", "In action Shop");
-            Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
+            Intent sartItent = new Intent(getApplicationContext(), CaddyActivity.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_home){
