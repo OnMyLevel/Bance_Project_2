@@ -12,21 +12,40 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="20dp"
         android:id="@+id/myrecyclerView">
     </android.support.v7.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/commander"
+    <TextView
+        android:id="@+id/titrePannier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comander"
-        android:background="@color/colorBlack"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:textColor="@color/colorBlack"
+        android:text="@string/votre_pannier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/commander"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/commander"
         android:textColor="@color/colorWhite"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="490dp"
-        tools:ignore="MissingConstraints" />
+        android:background="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@+id/myrecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titrePannier" />
 
 
 </android.support.constraint.ConstraintLayout>

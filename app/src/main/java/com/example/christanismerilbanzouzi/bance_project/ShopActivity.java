@@ -1,22 +1,29 @@
 package com.example.christanismerilbanzouzi.bance_project;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.Volley;
 import com.example.christanismerilbanzouzi.bance_project.Interface.ItemClickListener;
 import com.example.christanismerilbanzouzi.bance_project.Model.Article;
 import com.example.christanismerilbanzouzi.bance_project.ViewHolder.ArticleViewHolder;
@@ -33,30 +40,65 @@ public class ShopActivity extends AppCompatActivity {
     DatabaseReference article;
     RecyclerView recycler_article;
     RecyclerView.LayoutManager layoutManager;
+    TextView titrePannier;
+    Button  commander;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-        myToolBar =findViewById(toolbar);
+        myToolBar = findViewById(toolbar);
         setSupportActionBar(myToolBar);
 
 
         // Init dataBase
         article = FirebaseDatabase.getInstance().getReference().child("Article");
-        Log.i("Test", "onCreate: "+article.toString());
+        Log.i("Test", "onCreate: " + article.toString());
         article.keepSynced(true);
 
         //Load Menu
-        recycler_article= (RecyclerView) findViewById(myrecyclerView);
+        recycler_article = (RecyclerView) findViewById(myrecyclerView);
         recycler_article.setHasFixedSize(true);
-        layoutManager= new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(this);
         recycler_article.setLayoutManager(layoutManager);
+        titrePannier = (TextView) findViewById(R.id.titrePannier);
+        Typeface myCust = Typeface.createFromAsset(getAssets(), "fonts/A_Box_For.ttf");
+        titrePannier.setTypeface(myCust);
+
+        commander = (Button) findViewById(R.id.commander);
+
+        commander.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog alertDialog = new AlertDialog.Builder(ShopActivity.this)
+                        .setTitle("Comfirmation ?")
+                        .setMessage(" Vouslez vou comfirmer votre comande ? ")
+                        .setPositiveButton("OUI ", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(ShopActivity.this, "Votre Commande a été Transmis", Toast.LENGTH_SHORT).show();
+                            finish();
+                            }
+                        })
+                        .setNegativeButton("NON", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(ShopActivity.this, "Votre Commande a été annuler", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .show();
+            }
+        });
+
+
+
+
         /*onLoad();*/
 
-
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,17 +112,14 @@ public class ShopActivity extends AppCompatActivity {
             super(itemView);
             mView=itemView;
         }
-
         public void setName(String name){
             TextView article_name= (TextView) mView.findViewById(recycler_article_name);
             article_name.setText(name);
         }
-
         public void setImage(Context ctx,String image){
             ImageView article_image= (ImageView) mView.findViewById(recycler_article_image);
             Picasso.with(ctx).load(image).into(article_image);
         }
-
         public void setPrice(String price){
             TextView article_price= (TextView) mView.findViewById(recycler_article_price);
             article_price.setText(price);
@@ -119,7 +158,6 @@ public class ShopActivity extends AppCompatActivity {
             }
         }
         return true;
-
     }
 
     @Override
@@ -131,7 +169,6 @@ public class ShopActivity extends AppCompatActivity {
                     @Override
                     protected void populateViewHolder(ArticleViewHolders viewHolder, Article model, int position) {
                         Log.i("TEST", "populateViewHolder: "+model.toString());
-
                         viewHolder.setName(model.getName());
                         viewHolder.setPrice(String.valueOf(model.getPrice()));
                         viewHolder.setImage(getApplicationContext(),model.getImage());
@@ -143,14 +180,12 @@ public class ShopActivity extends AppCompatActivity {
 
     public void onLoad(){
         Log.i("LOG", "loadArticle: DEBUT ");
-
         FirebaseRecyclerAdapter<Article,ArticleViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Article,ArticleViewHolder>(Article.class,R.layout.article_item,
                         ArticleViewHolder.class,article){
                     @Override
                     protected void populateViewHolder(ArticleViewHolder viewHolder, Article model, int position) {
                         Log.i("TEST", "populateViewHolder: ");
-
                         viewHolder.textArticleView.setText(model.getName());
                         Picasso.with(getBaseContext()).load(model.getImage()).into(viewHolder.imageView);
                         final Article clickItem = model;
@@ -166,5 +201,4 @@ public class ShopActivity extends AppCompatActivity {
         Log.i("TEST", "loadArticle: END"+adapter.toString());
         recycler_article.setAdapter(adapter);
     }
-
 }

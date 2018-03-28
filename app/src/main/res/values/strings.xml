@@ -40,4 +40,8 @@
     <string name="ajouter_au_pannier">Ajouter Au Pannier</string>
     <string name="gallerie">*GALLERIE*</string>
     <string name="deailles">Detaille</string>
+    <string name="votre_pannier">Votre Pannier</string>
+    <string name="comander">Comander</string>
+    <string name="commander">Commander</string>
+    <string name="comfirmerCommande">Comfirmer votre Commande ?</string>
 </resources>

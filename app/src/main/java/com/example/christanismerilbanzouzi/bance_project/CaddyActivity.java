@@ -44,6 +44,7 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
     private RequestQueue myRequest;
     private TextView textView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,8 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
         textView = (TextView) findViewById(R.id.text_gallerie);
         Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
         textView.setTypeface(myCust);
+
+
 
     }
 
