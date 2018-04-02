@@ -2,8 +2,8 @@ package com.example.christanismerilbanzouzi.bance_project;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -11,12 +11,13 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.christanismerilbanzouzi.bance_project.Common.Common;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class AccountActivity extends AppCompatActivity {
 
     private Toolbar myToolBar;
     TextView currentUser;
+    TextView commandeUser;
+
 
 
     @Override
@@ -27,6 +28,8 @@ public class AccountActivity extends AppCompatActivity {
         setSupportActionBar(myToolBar);
         currentUser= (TextView) findViewById(R.id.currentuser);
         currentUser.setText(Common.currentUser.getName().toString());
+        commandeUser = (TextView) findViewById(R.id.nbcommande);
+        commandeUser.setText("Nb de commande:"+Common.currentUser.getNombreCmd());
     }
 
     @Override

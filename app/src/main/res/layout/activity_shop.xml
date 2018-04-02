@@ -24,7 +24,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:textColor="@color/colorBlack"
         android:text="@string/votre_pannier"
         app:layout_constraintEnd_toEndOf="parent"

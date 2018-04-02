@@ -1,29 +1,32 @@
 package com.example.christanismerilbanzouzi.bance_project;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.toolbox.Volley;
+import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.Interface.ItemClickListener;
 import com.example.christanismerilbanzouzi.bance_project.Model.Article;
 import com.example.christanismerilbanzouzi.bance_project.ViewHolder.ArticleViewHolder;
@@ -32,7 +35,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-import static com.example.christanismerilbanzouzi.bance_project.R.id.*;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.action_account;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.action_caddy;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.action_home;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.action_location;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.action_shop;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.myrecyclerView;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.recycler_article_image;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.recycler_article_name;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.recycler_article_price;
+import static com.example.christanismerilbanzouzi.bance_project.R.id.toolbar;
 
 public class ShopActivity extends AppCompatActivity {
 
@@ -42,7 +54,7 @@ public class ShopActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     TextView titrePannier;
     Button  commander;
-
+    private NotificationManager notifManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,24 +89,85 @@ public class ShopActivity extends AppCompatActivity {
                         .setPositiveButton("OUI ", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(ShopActivity.this, "Votre Commande a été Transmis", Toast.LENGTH_SHORT).show();
-                            finish();
+                                Common.currentUser.getNombreCmd();
+                                notificationSet();
+                                finish();
                             }
                         })
                         .setNegativeButton("NON", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(ShopActivity.this, "Votre Commande a été annuler", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ShopActivity.this, " Votre Commande a été Annuler ", Toast.LENGTH_SHORT).show();
+                                finish();
                             }
                         })
                         .show();
             }
         });
-
-
-
-
         /*onLoad();*/
+    }
+
+
+    private void notificationSet(){
+
+
+        final int NOTIFY_ID = 1002;
+        // There are hardcoding only for show it's just strings
+        String name = "my_package_channel";
+        String id = "my_package_channel_1"; // The user-visible name of the channel.
+        String description = "my_package_first_channel"; // The user-visible description of the channel.
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationCompat.Builder builder;
+
+        if (notifManager == null) {
+            notifManager =
+                    (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        }
+
+        String aMessage=" VOTRE COMMANDE  A ETE ENVOYER ";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, name, importance);
+                mChannel.setDescription(description);
+                mChannel.enableVibration(true);
+                mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+                notifManager.createNotificationChannel(mChannel);
+            }
+
+            builder = new NotificationCompat.Builder(this, id);
+            intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            builder.setContentTitle(aMessage)  // required
+                    .setSmallIcon(R.drawable.caddy) // required
+                    .setContentText(this.getString(R.string.app_name))  // required
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setAutoCancel(true)
+                    .setContentIntent(pendingIntent)
+                    .setTicker(aMessage)
+                    .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+        } else {
+
+            builder = new NotificationCompat.Builder(this);
+            intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            builder.setContentTitle(aMessage)                           // required
+                    .setSmallIcon(R.drawable.caddy) // required
+                    .setContentText(this.getString(R.string.app_name))  // required
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setAutoCancel(true)
+                    .setContentIntent(pendingIntent)
+                    .setTicker(aMessage)
+                    .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                    .setPriority(Notification.PRIORITY_HIGH);
+        }
+
+        Notification notification = builder.build();
+        notifManager.notify(NOTIFY_ID, notification);
 
     }
 

@@ -1,13 +1,11 @@
 package com.example.christanismerilbanzouzi.bance_project;
 
-import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.os.storage.StorageManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -149,7 +147,7 @@ public class Detailsctivity extends AppCompatActivity {
             Toast.makeText(this," Ajouter au Pannier ",Toast.LENGTH_SHORT).show();
 
         }else{
-            Toast.makeText(this,"no file for image ",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Pas d'Ajout d'article ",Toast.LENGTH_SHORT).show();
         }
 
     }

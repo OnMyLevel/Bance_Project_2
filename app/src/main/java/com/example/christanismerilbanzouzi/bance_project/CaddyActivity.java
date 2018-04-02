@@ -3,8 +3,8 @@ package com.example.christanismerilbanzouzi.bance_project;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -18,11 +18,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.christanismerilbanzouzi.bance_project.Adapter.ArticleLongAdapter;
 import com.example.christanismerilbanzouzi.bance_project.Model.ArticleLong;
-import com.google.android.gms.vision.text.Text;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -152,6 +150,7 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
 
     @Override
     public void onItemClick(int position) {
+
         Intent detailsIntent = new Intent(this,Detailsctivity.class);
         ArticleLong clickitem =   myTable.get(position);
 
