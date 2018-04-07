@@ -34,7 +34,12 @@
         <activity
             android:name=".Popup.Popup"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".Detailsctivity"></activity>
+        <activity android:name=".Detailsctivity" />
+        <activity android:name=".Droit" />
+
+        <service
+            android:name=".service.GetDroit"
+            android:exported="false"></service>
     </application>
 
 </manifest>

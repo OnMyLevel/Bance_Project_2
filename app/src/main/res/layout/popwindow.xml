@@ -24,11 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/helloView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="20dp"
         android:text="@string/username"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        android:textStyle="bold"
+        android:textSize="30sp" />
 
 
 </RelativeLayout>

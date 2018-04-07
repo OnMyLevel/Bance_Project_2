@@ -35,7 +35,6 @@
     <string name="details">Details</string>
     <string name="votrepanier">Votre Pannier</string>
     <string name="description_article">...</string>
-    <string name="prix">Prix</string>
     <string name="image_artcicle">Image Artcicle</string>
     <string name="ajouter_au_pannier">Ajouter Au Pannier</string>
     <string name="gallerie">*GALLERIE*</string>
@@ -44,4 +43,10 @@
     <string name="comander">Comander</string>
     <string name="commander">Commander</string>
     <string name="comfirmerCommande">Comfirmer votre Commande ?</string>
+    <string name="droit">Droit</string>
+    <string name="droits">Droits</string>
+    <string name="nombre_de_commande">Nombre De Commande:</string>
+    <string name="account">Account</string>
+    <string name="prix">Prix</string>
+    <string name="nbcommnde">nbCommnde</string>
 </resources>

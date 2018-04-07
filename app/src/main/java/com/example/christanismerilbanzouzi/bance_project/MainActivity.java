@@ -1,10 +1,9 @@
 package com.example.christanismerilbanzouzi.bance_project;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
 import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
          new Handler().postDelayed(new Runnable() {
              @Override
              public void run() {
-                 //Intent homreIntent = new Intent(MainActivity.this,Authentification.class);
-                 Intent homreIntent = new Intent(MainActivity.this,HomeActivity.class);
+                 Intent homreIntent = new Intent(MainActivity.this,Authentification.class);
+                //Intent homreIntent = new Intent(MainActivity.this,HomeActivity.class);
                  startActivity(homreIntent);
                  finish();
              }

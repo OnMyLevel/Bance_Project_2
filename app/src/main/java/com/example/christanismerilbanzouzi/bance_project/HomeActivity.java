@@ -3,29 +3,19 @@ package com.example.christanismerilbanzouzi.bance_project;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-import com.example.christanismerilbanzouzi.bance_project.Adapter.ArticleLongAdapter;
 import com.example.christanismerilbanzouzi.bance_project.Common.Common;
-import com.example.christanismerilbanzouzi.bance_project.Model.ArticleLong;
 import com.example.christanismerilbanzouzi.bance_project.Popup.Popup;
 
-import java.util.ArrayList;
+import static com.example.christanismerilbanzouzi.bance_project.Authentification.EXTRA_USER_NAME;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -34,19 +24,27 @@ public class HomeActivity extends AppCompatActivity {
     private TextView currentUser;
     private VideoView videoView;
     private  TextView textNews;
+    public  static  final  String EXTRA_USERNAME="Image";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
 
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
         myToolBar.setTitle("Home");
         currentUser = (TextView) findViewById(R.id.currentuser);
+        Intent intent = getIntent();
+        String name = intent.getStringExtra(EXTRA_USER_NAME);
+
         if(Common.Pop == true) {
-            startActivity(new Intent(HomeActivity.this, Popup.class));
+
+            Log.i("NAME USER", "USER NAME"+name.toString());
+            Intent popIntent = new Intent(this,Popup.class);
+            popIntent.putExtra(EXTRA_USER_NAME,name);
+            startActivity(popIntent);
         }
         textNews = (TextView) findViewById(R.id.titleNews);
         Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
@@ -67,14 +65,19 @@ public class HomeActivity extends AppCompatActivity {
             Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
             startActivity(sartItent);
         }
+        else if (item.getItemId() == R.id.action_shop){
+            Log.i("Action_Caddy", "In action Caddy ");
+            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            startActivity(sartItent);
+        }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
             Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
             startActivity(sartItent);
         }
-        else if (item.getItemId() == R.id.action_shop){
-            Log.i("Action_Shop", "In action Shop");
-            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+        else if (item.getItemId() == R.id.action_droit){
+            Log.i("Action_Droi", "In Droits");
+            Intent sartItent = new Intent(getApplicationContext(),Droit.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_home){
@@ -91,9 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(goToLocation);
             }
         }
-
         return true;
     }
-
 
 }

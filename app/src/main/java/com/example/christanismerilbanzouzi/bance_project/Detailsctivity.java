@@ -129,7 +129,7 @@ public class Detailsctivity extends AppCompatActivity {
     }
 
     private  String getFileExtension(Uri uri){
-        Log.i("GETFILEENTENSION", "getFileExtension: ");
+        Log.i("GET FILE ENTENSION", "getFileExtension: ");
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return  mime.getExtensionFromMimeType(cR.getType(uri));

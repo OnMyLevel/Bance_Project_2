@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="@string/avaible_article_on"
         android:textSize="30sp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="15dp"
         android:textColor="@color/colorBlack"/>
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/prix"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:layout_marginStart="185dp"
         android:textColor="@color/colorBlack"/>
 

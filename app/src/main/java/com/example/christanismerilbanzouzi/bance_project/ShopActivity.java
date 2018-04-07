@@ -63,7 +63,6 @@ public class ShopActivity extends AppCompatActivity {
         myToolBar = findViewById(toolbar);
         setSupportActionBar(myToolBar);
 
-
         // Init dataBase
         article = FirebaseDatabase.getInstance().getReference().child("Article");
         Log.i("Test", "onCreate: " + article.toString());
@@ -89,7 +88,7 @@ public class ShopActivity extends AppCompatActivity {
                         .setPositiveButton("OUI ", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Common.currentUser.getNombreCmd();
+                                Common.currentUser.setNombreCmd(Common.currentUser.getNombreCmd()+1);
                                 notificationSet();
                                 finish();
                             }

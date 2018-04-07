@@ -9,5 +9,6 @@ import com.example.christanismerilbanzouzi.bance_project.Model.User;
 /* classe qui permet de partager des valeurs entre activité*/
 public class Common {
     public static User currentUser;
+    public static String droits= new String("");
     public static boolean Pop= true;
 }

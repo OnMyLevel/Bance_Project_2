@@ -1,14 +1,12 @@
 package com.example.christanismerilbanzouzi.bance_project;
 
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.christanismerilbanzouzi.bance_project.Common.Common;
@@ -18,12 +16,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class Authentification extends AppCompatActivity {
 
     Button btnSignIn,btnSignUp;
     EditText editId,editPassword;
+    public  static  final  String EXTRA_USER_NAME ="Image";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,13 +53,10 @@ public class Authentification extends AppCompatActivity {
                             //get user infotmation
                             User userTmp = dataSnapshot.child(editId.getText().toString()).getValue(User.class);
                             if (userTmp.getPassword().equals(editPassword.getText().toString())) {
+
                                 Toast.makeText(Authentification.this, "Sign in successfully",
                                         Toast.LENGTH_SHORT).show();
-
-                                // si l'user c'est connecté à l'application:
-                                Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
-                                Common.currentUser= userTmp;
-                                startActivity(sartItent);
+                                startHomeIntent(userTmp);
                                 finish();
                             } else {
                                 Toast.makeText(Authentification.this, "Wrong password !!",
@@ -91,6 +86,15 @@ public class Authentification extends AppCompatActivity {
         });
 
 
+    }
+
+    private void startHomeIntent(User userTmp) {
+        // si l'user c'est connecté à l'application:
+        Intent detailsIntent = new Intent(this,HomeActivity.class);
+        detailsIntent.putExtra(EXTRA_USER_NAME,userTmp.getName());
+        //Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
+        Common.currentUser= userTmp;
+        startActivity(detailsIntent);
     }
 
 
