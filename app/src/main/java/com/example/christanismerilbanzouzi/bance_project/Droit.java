@@ -31,6 +31,7 @@ public class Droit extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         Log.i("Texte", "onCreate: DROIT");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_droit);

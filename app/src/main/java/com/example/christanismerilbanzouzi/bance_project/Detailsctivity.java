@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.Model.Article;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,16 +39,15 @@ public class Detailsctivity extends AppCompatActivity {
     TextView textView;
     Button btn_ajouter;
     String imageUri;
-
     private Toolbar myToolBar;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailsctivity);
-
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
 
@@ -61,23 +61,17 @@ public class Detailsctivity extends AppCompatActivity {
         prix = (TextView) findViewById(R.id.price_article);
         desc= (TextView) findViewById(R.id.description_article);
         nameAcrticle = (TextView) findViewById(R.id.name_article);
-
         mStorageRef = FirebaseStorage.getInstance().getReference("Article");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Article");
-
         imageUri = image;
-
-        prix.setText(price+"$");
+        prix.setText(price+"");
         nameAcrticle.setText(name);
         desc.setText(descString);
-
         Picasso.with(this).load(image).fit().centerInside().into(imageView);
         textView = (TextView) findViewById(R.id.text_titleId);
         Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
         textView.setTypeface(myCust);
-
         btn_ajouter = (Button) findViewById(R.id.btn_ajouter);
-
         btn_ajouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -153,11 +147,10 @@ public class Detailsctivity extends AppCompatActivity {
             Article upload = new Article(nameAcrticle.getText().toString(),imageUri.toString(),prix.getText().toString());
             String uploadId = mDatabaseRef.push().getKey();
             mDatabaseRef.child(uploadId).setValue(upload);
+            Common.total+= Integer.valueOf(upload.getPrice());
             Toast.makeText(this," Ajouter au Pannier ",Toast.LENGTH_SHORT).show();
-
         }else{
             Toast.makeText(this,"Pas d'Ajout d'article ",Toast.LENGTH_SHORT).show();
         }
-
     }
 }

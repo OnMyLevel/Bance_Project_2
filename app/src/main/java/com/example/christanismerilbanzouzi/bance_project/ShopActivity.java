@@ -52,12 +52,13 @@ public class ShopActivity extends AppCompatActivity {
     DatabaseReference article;
     RecyclerView recycler_article;
     RecyclerView.LayoutManager layoutManager;
-    TextView titrePannier;
+    TextView titrePannier,prixTotal;
     Button  commander;
     private NotificationManager notifManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
         myToolBar = findViewById(toolbar);
@@ -74,11 +75,12 @@ public class ShopActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recycler_article.setLayoutManager(layoutManager);
         titrePannier = (TextView) findViewById(R.id.titrePannier);
+        prixTotal = (TextView) findViewById(R.id.totalPrice);
+        prixTotal.setText("Prix Total:"+Common.total+"$");
+        Log.i("TOTAL", "TOTAL"+Common.total);
         Typeface myCust = Typeface.createFromAsset(getAssets(), "fonts/A_Box_For.ttf");
         titrePannier.setTypeface(myCust);
-
         commander = (Button) findViewById(R.id.commander);
-
         commander.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,7 +111,6 @@ public class ShopActivity extends AppCompatActivity {
 
     private void notificationSet(){
 
-
         final int NOTIFY_ID = 1002;
         // There are hardcoding only for show it's just strings
         String name = "my_package_channel";
@@ -135,7 +136,6 @@ public class ShopActivity extends AppCompatActivity {
                 mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                 notifManager.createNotificationChannel(mChannel);
             }
-
             builder = new NotificationCompat.Builder(this, id);
             intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -164,10 +164,8 @@ public class ShopActivity extends AppCompatActivity {
                     .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                     .setPriority(Notification.PRIORITY_HIGH);
         }
-
         Notification notification = builder.build();
         notifManager.notify(NOTIFY_ID, notification);
-
     }
 
     @Override
@@ -251,6 +249,7 @@ public class ShopActivity extends AppCompatActivity {
                         Log.i("TEST", "populateViewHolder: "+model.toString());
                         viewHolder.setName(model.getName());
                         viewHolder.setPrice(String.valueOf(model.getPrice()));
+                        Common.total+=Integer.valueOf(model.getPrice());
                         viewHolder.setImage(getApplicationContext(),model.getImage());
                     }
                 };

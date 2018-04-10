@@ -34,7 +34,6 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
     public  static  final  String EXTRA_NAME ="Name";
     public  static  final  String EXTRA_PRICE ="Price";
     public  static  final  String EXTRA_DESC="Description";
-
     private Toolbar myToolBar;
     private RecyclerView recyclerView;
     private ArticleLongAdapter articleLongAdapter;
@@ -44,9 +43,9 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caddy);
-
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
 
@@ -65,7 +64,6 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
     private void parseJson() {
 
         String url="http://banzouzicmeril.fr/FichierJson/RestJson.json";
-
         JsonArrayRequest request= new JsonArrayRequest(Request.Method.GET,url,null,
             new Response.Listener<JSONArray>(){
 
@@ -75,8 +73,8 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
                     try {
                         JSONArray JsonArray = (JSONArray)response;
                         for (int i=0; i < JsonArray.length();i++){
-                            JSONObject article = JsonArray.getJSONObject(i);
 
+                            JSONObject article = JsonArray.getJSONObject(i);
                             String name = article.getString("Name");
                             String imageUrl= article.getString("Image");
                             String price =   article.getString("Price");
@@ -84,12 +82,10 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
                             String  discount = article.getString("Discount");
                             String categorieId = article.getString("CategorieId");
                             myTable.add( new ArticleLong( name,imageUrl, price,description, categorieId,discount));
-
                         }
                         articleLongAdapter = new ArticleLongAdapter(CaddyActivity.this,myTable);
                         recyclerView.setAdapter(articleLongAdapter);
                         articleLongAdapter.setOnItemClickListener(CaddyActivity.this);
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -160,13 +156,10 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
 
         Intent detailsIntent = new Intent(this,Detailsctivity.class);
         ArticleLong clickitem =   myTable.get(position);
-
         detailsIntent.putExtra(EXTRA_URL,clickitem.getImage());
         detailsIntent.putExtra(EXTRA_NAME,clickitem.getName());
         detailsIntent.putExtra(EXTRA_PRICE,clickitem.getPrice());
         detailsIntent.putExtra(EXTRA_DESC,clickitem.getDescription());
-
         startActivity(detailsIntent);
-
     }
 }

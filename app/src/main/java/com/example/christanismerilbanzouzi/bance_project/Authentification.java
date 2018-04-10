@@ -25,13 +25,13 @@ public class Authentification extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentification);
 
         editId = (EditText) findViewById(R.id.editId);
         editPassword = (EditText) findViewById(R.id.editPassword);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
-
 
         //initFireBase
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -87,6 +87,4 @@ public class Authentification extends AppCompatActivity {
         Common.currentUser= userTmp;
         startActivity(detailsIntent);
     }
-
-
 }

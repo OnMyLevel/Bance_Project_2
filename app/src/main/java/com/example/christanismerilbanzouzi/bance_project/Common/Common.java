@@ -11,4 +11,5 @@ public class Common {
     public static User currentUser;
     public static String droits= new String("");
     public static boolean Pop= true;
+    public  static  int   total=0;
 }

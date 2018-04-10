@@ -31,7 +31,6 @@ public class HomeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         myToolBar =findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
         myToolBar.setTitle("Home");
@@ -49,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
         textNews = (TextView) findViewById(R.id.titleNews);
         Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
         textNews.setTypeface(myCust);
-
     }
 
     @Override

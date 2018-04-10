@@ -12,22 +12,22 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="260dp"
         android:layout_marginStart="20dp"
         android:id="@+id/myrecyclerView">
     </android.support.v7.widget.RecyclerView>
 
     <TextView
         android:id="@+id/titrePannier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textSize="60sp"
-        android:textColor="@color/colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="0dp"
         android:text="@string/votre_pannier"
+        android:textColor="@color/colorBlack"
+        android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -38,11 +38,26 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:background="@color/colorBlack"
         android:text="@string/commander"
         android:textColor="@color/colorWhite"
-        android:background="@color/colorBlack"
         app:layout_constraintBottom_toTopOf="@+id/myrecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/total"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titrePannier" />

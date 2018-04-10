@@ -26,7 +26,6 @@ public class AccountActivity extends AppCompatActivity {
     TextView commandeUser;
     Fragment fragment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

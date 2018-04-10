@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.christanismerilbanzouzi.bance_project.Interface.ItemClickListener;
 import com.example.christanismerilbanzouzi.bance_project.Model.ArticleLong;
 import com.example.christanismerilbanzouzi.bance_project.R;
 import com.squareup.picasso.Picasso;
@@ -39,8 +38,8 @@ public class ArticleLongAdapter extends RecyclerView.Adapter<ArticleLongAdapter.
 
     @Override
     public ArticleLongViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View V= LayoutInflater.from(context).inflate(R.layout.cardview,parent,false);
 
+        View V= LayoutInflater.from(context).inflate(R.layout.cardview,parent,false);
         return new ArticleLongViewHolder(V);
     }
 
@@ -51,7 +50,6 @@ public class ArticleLongAdapter extends RecyclerView.Adapter<ArticleLongAdapter.
         String imageUrl = currenItem.getImage();
         String name = currenItem.getName();
         String price=currenItem.getPrice();
-
         holder.textView.setText(name);
         holder.textViewT.setText("Price:"+price+"$");
         Picasso.with(context).load(imageUrl).fit().centerInside().into(holder.imageView);

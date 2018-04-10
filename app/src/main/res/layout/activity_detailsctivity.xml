@@ -16,14 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/deailles"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
-        android:textSize="50sp"
-        android:textAlignment="center"/>
+        android:textSize="50sp" />
 
     <ImageView
         android:id="@+id/image_details"
         android:layout_width="match_parent"
-        android:layout_height="275dp"
+        android:layout_height="245dp"
         android:layout_marginTop="-25dp"
         android:contentDescription="@string/image_artcicle"
         android:src="@drawable/wywffcah_400x400" />
