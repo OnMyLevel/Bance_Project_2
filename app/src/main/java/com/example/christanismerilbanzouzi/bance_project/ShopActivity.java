@@ -170,8 +170,6 @@ public class ShopActivity extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main,menu);
@@ -210,9 +208,19 @@ public class ShopActivity extends AppCompatActivity {
             Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
             startActivity(sartItent);
         }
+        else if (item.getItemId() == R.id.action_droit){
+            Log.i("Action_Droi", "In Droits");
+            Intent sartItent = new Intent(getApplicationContext(),Droit.class);
+            startActivity(sartItent);
+        }
         else if (item.getItemId() == action_shop){
             Log.i("Action_Shop", "In action Shop");
             Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            startActivity(sartItent);
+        }
+        else if (item.getItemId() == R.id.action_deconexion){
+            Log.i("Action_Home", "In Other Options ");
+            Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == action_home){

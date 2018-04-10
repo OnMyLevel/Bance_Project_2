@@ -18,11 +18,6 @@ import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.service.GetDroit;
 
 import static android.support.v4.content.LocalBroadcastManager.getInstance;
-import static com.example.christanismerilbanzouzi.bance_project.R.id.action_account;
-import static com.example.christanismerilbanzouzi.bance_project.R.id.action_caddy;
-import static com.example.christanismerilbanzouzi.bance_project.R.id.action_home;
-import static com.example.christanismerilbanzouzi.bance_project.R.id.action_location;
-import static com.example.christanismerilbanzouzi.bance_project.R.id.action_shop;
 import static com.example.christanismerilbanzouzi.bance_project.R.id.toolbar;
 
 public class Droit extends AppCompatActivity {
@@ -65,27 +60,32 @@ public class Droit extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        if( item.getItemId() == action_account){
+        if( item.getItemId() == R.id.action_account){
             Log.i("Action_Account", "In action Account ");
             Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
             startActivity(sartItent);
         }
-        else if (item.getItemId() == action_caddy){
+        else if (item.getItemId() == R.id.action_shop){
+            Log.i("Action_Caddy", "In action Caddy ");
+            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            startActivity(sartItent);
+        }
+        else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
             Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class);
             startActivity(sartItent);
         }
-        else if (item.getItemId() == action_shop){
-            Log.i("Action_Shop", "In action Shop");
-            Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+        else if (item.getItemId() == R.id.action_droit){
+            Log.i("Action_Droi", "In Droits");
+            Intent sartItent = new Intent(getApplicationContext(),Droit.class);
             startActivity(sartItent);
         }
-        else if (item.getItemId() == action_home){
+        else if (item.getItemId() == R.id.action_home){
             Log.i("Action_Home", "In Other Options ");
             Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
             startActivity(sartItent);
         }
-        else if (item.getItemId() == action_location){
+        else if (item.getItemId() == R.id.action_location){
             Log.i("Action_Home", " In Action Location ");
             String googleAdress = "https://www.google.fr/maps/search/pull+and/@48.848155,2.1814866,12z/data=!3m1!4b1";
             Uri webbadress = Uri.parse(googleAdress);

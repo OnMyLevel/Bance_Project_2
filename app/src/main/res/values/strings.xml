@@ -1,52 +1,60 @@
 <resources>
-    <string name="app_name">Bance Paris</string>
-    <string name="name_shop">Shop</string>
-    <string name="name_account">Account</string>
-    <string name="name_caddy">Caddy</string>
-    <string name="name_home">Home</string>
-    <string name="copyRight">Copyright © 2017 Bance</string>
-    <string name="titleWelcome">Welcome to BANCE</string>
-    <string name="signUp">Sign Up</string>
-    <string name="signIn">Sign In</string>
-    <string name="textIntro">Le Lorem Ipsum est simplement du faux texte faux
-        texte les années 1500, quand un peintre anonyme assemde
-        polices de texte. Il n\'a pas fait que survivre cinq siècles,</string>
-    <string name="password">Password</string>
-    <string name="name">Name</string>
+    <string name="app_name"> Bance Paris </string>
+    <string name="name_shop"> Vêtements </string>
+    <string name="name_account"> Compte </string>
+    <string name="name_caddy"> Caddy </string>
+    <string name="name_home"> Accueil </string>
+    <string name="copyRight"> Copyright © 2017 Bance </string>
+    <string name="titleWelcome"> Welcome to BANCE </string>
+    <string name="signUp"> Inscription </string>
+    <string name="signIn">Se Connecté</string>
+    <string name="textIntro">Parka par BANCE Pour les conditions climatiques imprévisibles Capuche à armature Patte avec fermeture éclair
+        Fermeture par bouton-pression Cordon de serrage à la taille Vous avez le contrôle
+        Poches fonctionnelles Coupe classique Taille parfaitement </string>
+    <string name="password">Mot de Passe</string>
+    <string name="name">Nom</string>
     <string name="id">Id</string>
     <string name="currentuser">CurrentUser</string>
-    <string name="avaible_article_on">Article disponible </string>
-    <string name="avaible_article_price">Price :</string>
-    <string name="nouvelle_collection">Nouvelle collection</string>
-    <string name="current_date">23/04/2017</string>
-    <string name="intrVeste">Veste BANCE noir sans capuche BANCE</string>
-    <string name="currentDate">Date:27/04/2017</string>
-    <string name="new_collection">New Collection</string>
-    <string name="vestSanCapuche">Vest SANS CAPUCHE</string>
+    <string name="avaible_article_on">Article Disponible </string>
+    <string name="avaible_article_price">Price: </string>
+    <string name="nouvelle_collection"> Nouvelle Collection </string>
+    <string name="current_date"> 23/04/2017 </string>
+    <string name="intrVeste"> Veste BANCE NOIR </string>
+    <string name="currentDate"> Date:27/04/2017 </string>
+    <string name="new_collection"> Nouvelle Collection </string>
+    <string name="vestSanCapuche"> Veste SANS CAPUCHE </string>
     <string name="user_name">Nom de User</string>
-    <string name="hello">Bonjour</string>
-    <string name="username">SPRING VIBES </string>
-    <string name="promotitle">*-20% sur les PULL *</string>
-    <string name="descriptionveste">La collection homme BANCE clôture la saison avec
+    <string name="hello"> Bonjour </string>
+    <string name="username"> SPRING VIBES </string>
+    <string name="promotitle">*-20% sur les Pulls*</string>
+    <string name="descriptionveste"> La collection Homme BANCE clôture la saison avec
         les toutes dernières tendances et les articles les plus branchés.
         Le tout, conçu à Londres et vendu à travers le monde entier.
         Mettez vos indispensables au goût, les toutes dernières tendances et les articles les plus branchés.
-        Le tout, conçu à Londres et vendu  </string>
-    <string name="details">Details</string>
-    <string name="votrepanier">Votre Pannier</string>
+        Le tout, conçu à Londres et vendu </string>
+    <string name="details"> Détails </string>
+    <string name="votrepanier"> Votre Panier </string>
     <string name="description_article">...</string>
-    <string name="image_artcicle">Image Artcicle</string>
-    <string name="ajouter_au_pannier">Ajouter Au Pannier</string>
-    <string name="gallerie">*GALLERIE*</string>
-    <string name="deailles">Detaille</string>
-    <string name="votre_pannier">Votre Pannier</string>
-    <string name="comander">Comander</string>
-    <string name="commander">Commander</string>
-    <string name="comfirmerCommande">Comfirmer votre Commande ?</string>
-    <string name="droit">Droit</string>
-    <string name="droits">Droits</string>
-    <string name="nombre_de_commande">Nombre De Commande:</string>
-    <string name="account">Account</string>
-    <string name="prix">Prix</string>
-    <string name="nbcommnde">nbCommnde</string>
+    <string name="image_artcicle">Image de Article</string>
+    <string name="ajouter_au_pannier"> Ajouter Au Panier</string>
+    <string name="gallerie">* Gallerie *</string>
+    <string name="deailles">*Details*</string>
+    <string name="votre_pannier">* Votre Panier * </string>
+    <string name="comander"> Commander </string>
+    <string name="commander"> Commander </string>
+    <string name="comfirmerCommande"> Voulez vous comfirmer votre Commande ?</string>
+    <string name="droit"> Droit </string>
+    <string name="droits"> Droit </string>
+    <string name="nombre_de_commande"> Nombres De Commande:</string>
+    <string name="account"> Account </string>
+    <string name="prix"> Prix </string>
+    <string name="nbcommnde"> nbCommnde </string>
+    <string name="commande_recent"> Commande Récente </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="comande_en_cours">Comande En Cours</string>
+    <string name="carte_bancaire">Carte Bancaire</string>
+    <string name="adresse_atcuel">Adresse Atcuel</string>
+    <string name="deconecxion">Deconecxion</string>
 </resources>

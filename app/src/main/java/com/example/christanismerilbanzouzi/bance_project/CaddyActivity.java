@@ -128,6 +128,16 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
             Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
             startActivity(sartItent);
         }
+        else if (item.getItemId() == R.id.action_droit){
+            Log.i("Action_Droi", "In Droits");
+            Intent sartItent = new Intent(getApplicationContext(),Droit.class);
+            startActivity(sartItent);
+        }
+        else if (item.getItemId() == R.id.action_deconexion){
+            Log.i("Action_Home", "In Other Options ");
+            Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
+            startActivity(sartItent);
+        }
         else if (item.getItemId() == R.id.action_home){
             Log.i("Action_Home", "In Other Options ");
             Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);

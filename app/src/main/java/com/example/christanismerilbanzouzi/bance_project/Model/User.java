@@ -9,16 +9,27 @@ public class User {
     private int NombreCmd;
     private String Name;
     private String Password;
+    private Adresse Adresse;
+    private CarteCB CarteCB;
 
     public User(){
 
     }
 
-    public User(String name, String password) {
+    public Adresse getAdresse() {
+        return Adresse;
+    }
 
-        Name = name;
-        Password = password;
-        NombreCmd = 0;
+    public void setAdresse(Adresse adresse) {
+        this.Adresse = adresse;
+    }
+
+    public CarteCB getCarteCB() {
+        return CarteCB;
+    }
+
+    public void setCarteCB(CarteCB carteCB) {
+        this.CarteCB = carteCB;
     }
 
     @Override
@@ -27,7 +38,18 @@ public class User {
                 "NombreCmd=" + NombreCmd +
                 ", Name='" + Name + '\'' +
                 ", Password='" + Password + '\'' +
+                ", adresse=" + Adresse +
+                ", carteCB=" + CarteCB +
                 '}';
+    }
+
+    public User(String name, String password, Adresse adresse, CarteCB carteCB) {
+
+        Name = name;
+        Password = password;
+        NombreCmd = 0;
+        this.Adresse = adresse;
+        this.CarteCB= carteCB;
     }
 
     public void setNombreCmd(int nombreCmd) {
@@ -39,13 +61,6 @@ public class User {
         return NombreCmd;
     }
 
-    public  User(int IdClient, String name, String password){
-
-
-        this.Name= name;
-        this.Password=password;
-        this.NombreCmd = 0;
-    }
 
     public void setName(String name) {
         Name = name;

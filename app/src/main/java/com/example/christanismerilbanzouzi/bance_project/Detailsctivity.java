@@ -40,7 +40,6 @@ public class Detailsctivity extends AppCompatActivity {
     String imageUri;
 
     private Toolbar myToolBar;
-
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
 
@@ -101,6 +100,11 @@ public class Detailsctivity extends AppCompatActivity {
             Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
             startActivity(sartItent);
         }
+        else if (item.getItemId() == R.id.action_deconexion){
+            Log.i("Action_Home", "In Other Options ");
+            Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
+            startActivity(sartItent);
+        }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
             Intent sartItent = new Intent(getApplicationContext(),ShopActivity.class );
@@ -109,6 +113,11 @@ public class Detailsctivity extends AppCompatActivity {
         else if (item.getItemId() == R.id.action_shop){
             Log.i("Action_Shop", "In action Shop");
             Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+            startActivity(sartItent);
+        }
+        else if (item.getItemId() == R.id.action_droit){
+            Log.i("Action_Droi", "In Droits");
+            Intent sartItent = new Intent(getApplicationContext(),Droit.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_home){

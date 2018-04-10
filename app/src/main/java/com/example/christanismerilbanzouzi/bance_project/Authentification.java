@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Authentification extends AppCompatActivity {
 
-    Button btnSignIn,btnSignUp;
+    Button btnSignIn;
     EditText editId,editPassword;
     public  static  final  String EXTRA_USER_NAME ="Image";
 
@@ -31,7 +31,6 @@ public class Authentification extends AppCompatActivity {
         editId = (EditText) findViewById(R.id.editId);
         editPassword = (EditText) findViewById(R.id.editPassword);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
-        btnSignUp = (Button) findViewById(R.id.btnSignUp);
 
 
         //initFireBase
@@ -52,6 +51,7 @@ public class Authentification extends AppCompatActivity {
                         if(dataSnapshot.child(editId.getText().toString()).exists()){
                             //get user infotmation
                             User userTmp = dataSnapshot.child(editId.getText().toString()).getValue(User.class);
+                            Log.i("USER", "USER"+userTmp.getAdresse().toString());
                             if (userTmp.getPassword().equals(editPassword.getText().toString())) {
 
                                 Toast.makeText(Authentification.this, "Sign in successfully",
@@ -77,15 +77,6 @@ public class Authentification extends AppCompatActivity {
 
             }
         });
-
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
     }
 
     private void startHomeIntent(User userTmp) {

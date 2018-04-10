@@ -85,6 +85,11 @@ public class HomeActivity extends AppCompatActivity {
             Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
             startActivity(sartItent);
         }
+        else if (item.getItemId() == R.id.action_deconexion){
+            Log.i("Action_Home", "In Other Options ");
+            Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
+            startActivity(sartItent);
+        }
         else if (item.getItemId() == R.id.action_location){
             Log.i("Action_Home", " In Action Location ");
             String googleAdress = "https://www.google.fr/maps/search/pull+and/@48.848155,2.1814866,12z/data=!3m1!4b1";
