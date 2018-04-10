@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name"> Bance Paris </string>
-    <string name="name_shop"> Vêtements </string>
-    <string name="name_account"> Compte </string>
+    <string name="name_account" translatable="false"> Compte </string>
     <string name="name_caddy"> Caddy </string>
     <string name="name_home"> Accueil </string>
     <string name="copyRight"> Copyright © 2017 Bance </string>
-    <string name="titleWelcome"> Welcome to BANCE </string>
+    <string name="titleWelcome">Bienvenue sur  BANCE</string>
     <string name="signUp"> Inscription </string>
     <string name="signIn">Se Connecté</string>
     <string name="textIntro">Parka par BANCE Pour les conditions climatiques imprévisibles Capuche à armature Patte avec fermeture éclair
@@ -20,12 +19,12 @@
     <string name="nouvelle_collection"> Nouvelle Collection </string>
     <string name="current_date"> 23/04/2017 </string>
     <string name="intrVeste"> Veste BANCE NOIR </string>
-    <string name="currentDate"> Date:27/04/2017 </string>
+    <string name="currentDate">Date:27/04/2018</string>
     <string name="new_collection"> Nouvelle Collection </string>
     <string name="vestSanCapuche"> Veste SANS CAPUCHE </string>
-    <string name="user_name">Nom de User</string>
+    <string name="user_name">Nom Utilisateur</string>
     <string name="hello"> Bonjour </string>
-    <string name="username"> SPRING VIBES </string>
+    <string name="username" translatable="false"> SPRING VIBES </string>
     <string name="promotitle">*-20% sur les Pulls*</string>
     <string name="descriptionveste"> La collection Homme BANCE clôture la saison avec
         les toutes dernières tendances et les articles les plus branchés.
@@ -43,20 +42,21 @@
     <string name="comander"> Commander </string>
     <string name="commander"> Commander </string>
     <string name="comfirmerCommande"> Voulez vous comfirmer votre Commande ?</string>
-    <string name="droit"> Droit </string>
-    <string name="droits"> Droit </string>
+    <string name="droit">Mention Légale</string>
+    <string name="droits" translatable="false">Mention Légale</string>
     <string name="nombre_de_commande"> Nombres De Commande:</string>
-    <string name="account"> Account </string>
     <string name="prix"> Prix </string>
     <string name="nbcommnde"> nbCommnde </string>
-    <string name="commande_recent"> Commande Récente </string>
+    <string name="commande_recent" translatable="false"> Commande Récente </string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="comande_en_cours">Comande En Cours</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="comande_en_cours" translatable="false">Comande En Cours</string>
     <string name="carte_bancaire">Carte Bancaire</string>
     <string name="adresse_atcuel">Adresse Atcuel</string>
     <string name="deconecxion">Deconecxion</string>
     <string name="montant_total">Montant Total</string>
     <string name="total">Total</string>
+    <string name="name_shop">Vêtements</string>
+    <string name="account">Compte</string>
 </resources>
