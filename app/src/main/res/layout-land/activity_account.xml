@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="138dp"
-        android:layout_height="142dp"
+        android:layout_width="127dp"
+        android:layout_height="36dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -21,9 +21,10 @@
         android:contentDescription="@string/account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229"
+        app:layout_constraintVertical_bias="0.363"
         app:srcCompat="@drawable/if_account_1954192" />
 
     <TextView
@@ -46,8 +47,8 @@
 
     <TextView
         android:id="@+id/nbcommande"
-        android:layout_width="192dp"
-        android:layout_height="58dp"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -78,10 +79,10 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nbcommande"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.057" />
 
     <Button
         android:id="@+id/cartebancaire"
@@ -98,10 +99,10 @@
         android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toEndOf="@+id/adressactuel"
-        app:layout_constraintTop_toBottomOf="@+id/nbcommande"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintTop_toTopOf="@+id/nbcommande"
+        app:layout_constraintVertical_bias="0.0" />
 
     <fragment
         android:id="@+id/fragment_commande"
@@ -114,8 +115,10 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adressactuel"
+        app:layout_constraintVertical_bias="0.727"
         tools:ignore="MissingConstraints"
         tools:layout="@layout/fragment_adresse"></fragment>
 

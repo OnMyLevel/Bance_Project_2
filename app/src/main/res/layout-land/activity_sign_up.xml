@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.christanismerilbanzouzi.bance_project.SignUp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_centerInParent="true"
+        >
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editPhone"
+            android:hint="id user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorBlack"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            app:met_maxCharacters="11"
+            android:inputType="phone"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editName"
+            android:hint="Your Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorBlack"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            app:met_maxCharacters="11"
+            android:inputType="textPersonName"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editPassword"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorBlack"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            app:met_maxCharacters="11"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/SignUp"
+            android:layout_width="599dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="0"
+            android:background="@color/colorBlack"
+            android:gravity="center"
+            android:text="@string/signUp"
+            android:textColor="@color/colorWhite" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

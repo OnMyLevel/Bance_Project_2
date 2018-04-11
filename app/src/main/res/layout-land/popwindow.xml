@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBlack"
+    app:cardCornerRadius="15dp">
+
+
+    <TextView
+        android:id="@+id/helloView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="109dp"
+        android:text="@string/hello"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/currentuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/helloView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/username"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

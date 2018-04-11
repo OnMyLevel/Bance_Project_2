@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_height="300dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+        <ImageView
+            android:id="@+id/articleImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/wywffcah_400x400"/>
+        <TextView
+            android:id="@+id/articleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creator Name"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/articlePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Price:"/>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

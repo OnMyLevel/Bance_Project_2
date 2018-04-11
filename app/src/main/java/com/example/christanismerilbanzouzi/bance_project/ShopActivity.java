@@ -164,6 +164,7 @@ public class ShopActivity extends AppCompatActivity {
                     .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                     .setPriority(Notification.PRIORITY_HIGH);
         }
+        Common.total=0;
         Notification notification = builder.build();
         notifManager.notify(NOTIFY_ID, notification);
     }

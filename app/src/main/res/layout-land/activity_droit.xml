@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context="com.example.christanismerilbanzouzi.bance_project.Droit">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <TextView
+        android:id="@+id/textDroit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:text="@string/droit"
+        android:scrollbars="vertical"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="165dp"
+        tools:ignore="MissingConstraints" />
+</android.support.constraint.ConstraintLayout>
