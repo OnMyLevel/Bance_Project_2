@@ -60,4 +60,5 @@
     <string name="name_shop">Vêtements</string>
     <string name="account">Compte</string>
     <string name="voir_simplement">Voir Simplement</string>
+    <string name="aller_au_shop">Aller au Shop</string>
 </resources>

@@ -66,7 +66,7 @@ public class AccountActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_home){
             Log.i("Action_Home", "In Other Options ");
-            Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
+            Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
             startActivity(sartItent);
         }
         else if (item.getItemId() == R.id.action_droit){
