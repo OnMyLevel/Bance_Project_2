@@ -7,9 +7,11 @@
     <string name="titleWelcome">Bienvenue sur  BANCE</string>
     <string name="signUp"> Inscription </string>
     <string name="signIn">Se Connecté</string>
-    <string name="textIntro">Parka par BANCE Pour les conditions climatiques imprévisibles Capuche à armature Patte avec fermeture éclair
-        Fermeture par bouton-pression Cordon de serrage à la taille Vous avez le contrôle
-        Poches fonctionnelles Coupe classique Taille parfaitement </string>
+    <string name="textIntro"> La collection Homme BANCE clôture la saison avec
+        les toutes dernières tendances et les articles les plus branchés.
+        Le tout, conçu à Londres et vendu à travers le monde entier.
+        Mettez vos indispensables au goût, les toutes dernières tendances et les articles les plus branchés.
+        Le tout, conçu à Londres et vendu </string>
     <string name="password">Mot de Passe</string>
     <string name="name">Nom</string>
     <string name="id">Id</string>
@@ -26,11 +28,9 @@
     <string name="hello"> Bonjour </string>
     <string name="username" translatable="false"> SPRING VIBES </string>
     <string name="promotitle">*-20% sur les Pulls*</string>
-    <string name="descriptionveste"> La collection Homme BANCE clôture la saison avec
-        les toutes dernières tendances et les articles les plus branchés.
-        Le tout, conçu à Londres et vendu à travers le monde entier.
-        Mettez vos indispensables au goût, les toutes dernières tendances et les articles les plus branchés.
-        Le tout, conçu à Londres et vendu </string>
+    <string name="descriptionveste"> Parka par BANCE Pour les conditions climatiques imprévisibles Capuche à armature Patte avec fermeture éclair
+        Fermeture par bouton-pression Cordon de serrage à la taille Vous avez le contrôle
+        Poches fonctionnelles Coupe classique Taille parfaitement</string>
     <string name="details"> Détails </string>
     <string name="votrepanier"> Votre Panier </string>
     <string name="description_article">...</string>

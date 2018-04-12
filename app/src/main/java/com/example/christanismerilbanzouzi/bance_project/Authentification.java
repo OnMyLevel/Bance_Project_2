@@ -76,7 +76,6 @@ public class Authentification extends AppCompatActivity {
                             startActivity(sartItent);
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -90,7 +89,7 @@ public class Authentification extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(Authentification.this, "Simple Connexion ",
+                Toast.makeText(Authentification.this, "Sans Connexion ",
                         Toast.LENGTH_SHORT).show();
                 Intent sartItent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(sartItent);
