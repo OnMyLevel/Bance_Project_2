@@ -9,7 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.christanismerilbanzouzi.bance_project.Common.Common;
@@ -25,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     private VideoView videoView;
     private  TextView textNews;
     public  static  final  String EXTRA_USERNAME="Image";
-
+    public Button goShop;
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -38,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String name = intent.getStringExtra(EXTRA_USER_NAME);
 
-        if(Common.Pop == true) {
+        if(Common.Pop == true & Common.currentUser !=null) {
 
             Log.i("NAME USER", "USER NAME"+name.toString());
             Intent popIntent = new Intent(this,Popup.class);
@@ -48,6 +51,17 @@ public class HomeActivity extends AppCompatActivity {
         textNews = (TextView) findViewById(R.id.titleNews);
         Typeface myCust= Typeface.createFromAsset(getAssets(),"fonts/A_Box_For.ttf");
         textNews.setTypeface(myCust);
+        goShop = (Button) findViewById(R.id.goShop);
+
+
+        goShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("Action_Caddy", "In action SHop ");
+                Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
+                startActivity(sartItent);
+            }
+        });
     }
 
     @Override
@@ -59,12 +73,18 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if( item.getItemId() == R.id.action_account){
-            Log.i("Action_Account", "In action Account ");
-            Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(sartItent);
+            if(Common.currentUser !=null ) {
+                Log.i("Action_Account", "In action Account ");
+                Intent sartItent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(sartItent);
+            }
+            else{
+                Toast.makeText(HomeActivity.this, "Vous êtes pas connecté ! ",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (item.getItemId() == R.id.action_shop){
-            Log.i("Action_Caddy", "In action Caddy ");
+            Log.i("Action_Caddy", "In action SHop ");
             Intent sartItent = new Intent(getApplicationContext(),CaddyActivity.class);
             startActivity(sartItent);
         }
@@ -75,6 +95,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_droit){
             Log.i("Action_Droi", "In Droits");
+            Common.Pop=false;
             Intent sartItent = new Intent(getApplicationContext(),Droit.class);
             startActivity(sartItent);
         }

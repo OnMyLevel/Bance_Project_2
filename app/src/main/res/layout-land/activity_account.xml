@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363"
+        app:layout_constraintVertical_bias="0.289"
         app:srcCompat="@drawable/if_account_1954192" />
 
     <TextView
@@ -118,7 +118,7 @@
         app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adressactuel"
-        app:layout_constraintVertical_bias="0.727"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:layout="@layout/fragment_adresse"></fragment>
 

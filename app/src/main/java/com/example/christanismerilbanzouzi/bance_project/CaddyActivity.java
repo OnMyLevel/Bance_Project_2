@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.christanismerilbanzouzi.bance_project.Adapter.ArticleLongAdapter;
+import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.Model.ArticleLong;
 
 import org.json.JSONArray;
@@ -110,9 +112,15 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if( item.getItemId() == R.id.action_account){
-            Log.i("Action_Account", "In action Account ");
-            Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(sartItent);
+            if(Common.currentUser !=null ) {
+                Log.i("Action_Account", "In action Account ");
+                Intent sartItent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(sartItent);
+            }
+            else{
+                Toast.makeText(CaddyActivity.this, "Vous êtes pas connecté ! ",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
@@ -131,6 +139,7 @@ public class CaddyActivity extends AppCompatActivity implements ArticleLongAdapt
         }
         else if (item.getItemId() == R.id.action_deconexion){
             Log.i("Action_Home", "In Other Options ");
+            Common.Pop=false;
             Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
             startActivity(sartItent);
         }

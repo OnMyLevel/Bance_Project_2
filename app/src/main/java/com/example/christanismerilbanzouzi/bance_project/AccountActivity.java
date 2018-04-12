@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.christanismerilbanzouzi.bance_project.Common.Common;
 import com.example.christanismerilbanzouzi.bance_project.Fragments.AdresseFragment;
@@ -46,10 +47,17 @@ public class AccountActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+
         if( item.getItemId() == R.id.action_account){
-            Log.i("Action_Account", "In action Account ");
-            Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(sartItent);
+            if(Common.currentUser !=null ) {
+                Log.i("Action_Account", "In action Account ");
+                Intent sartItent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(sartItent);
+            }
+            else{
+                Toast.makeText(AccountActivity.this, "Vous êtes pas connecté ! ",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (item.getItemId() == R.id.action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");

@@ -54,9 +54,10 @@
     <string name="comande_en_cours" translatable="false">Comande En Cours</string>
     <string name="carte_bancaire">Carte Bancaire</string>
     <string name="adresse_atcuel">Adresse Atcuel</string>
-    <string name="deconecxion">Deconecxion</string>
+    <string name="deconecxion">Déconexion</string>
     <string name="montant_total">Montant Total</string>
     <string name="total">Total</string>
     <string name="name_shop">Vêtements</string>
     <string name="account">Compte</string>
+    <string name="voir_simplement">Voir Simplement</string>
 </resources>

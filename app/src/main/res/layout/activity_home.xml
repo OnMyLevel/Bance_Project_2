@@ -16,13 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:padding="16dp"
         android:id="@+id/linearLayout">
         <ImageView
             android:id="@+id/articleImage"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="220dp"
             android:contentDescription="@string/vestSanCapuche"
             android:src="@drawable/pull_bance_noir_sans_capuche"/>
 
@@ -48,11 +48,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:textSize="60sp"
+        android:text="@string/promotitle"
         android:textColor="@color/colorBlack"
-        android:textStyle="bold"
-        android:text="@string/promotitle" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/description"
@@ -66,13 +65,13 @@
         android:textSize="17sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/goShop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorBlack"
-        android:text="@string/details"
+        android:text="@string/name_shop"
         android:layout_marginBottom="10dp"
         android:textColor="@color/colorWhite" />
 

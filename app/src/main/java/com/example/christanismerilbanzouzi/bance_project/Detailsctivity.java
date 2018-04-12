@@ -90,12 +90,19 @@ public class Detailsctivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if( item.getItemId() == R.id.action_account){
-            Log.i("Action_Account", "In action Account ");
-            Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(sartItent);
+            if(Common.currentUser !=null ) {
+                Log.i("Action_Account", "In action Account ");
+                Intent sartItent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(sartItent);
+            }
+            else{
+                Toast.makeText(Detailsctivity.this, "Vous êtes pas connecté ! ",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (item.getItemId() == R.id.action_deconexion){
             Log.i("Action_Home", "In Other Options ");
+            Common.Pop=false;
             Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
             startActivity(sartItent);
         }

@@ -62,9 +62,15 @@ public class Droit extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if( item.getItemId() == R.id.action_account){
-            Log.i("Action_Account", "In action Account ");
-            Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(sartItent);
+            if(Common.currentUser !=null ) {
+                Log.i("Action_Account", "In action Account ");
+                Intent sartItent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(sartItent);
+            }
+            else{
+                Toast.makeText(Droit.this, "Vous êtes pas connecté ! ",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (item.getItemId() == R.id.action_shop){
             Log.i("Action_Caddy", "In action Caddy ");
@@ -78,6 +84,7 @@ public class Droit extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_droit){
             Log.i("Action_Droi", "In Droits");
+            Common.Pop=false;
             Intent sartItent = new Intent(getApplicationContext(),Droit.class);
             startActivity(sartItent);
         }

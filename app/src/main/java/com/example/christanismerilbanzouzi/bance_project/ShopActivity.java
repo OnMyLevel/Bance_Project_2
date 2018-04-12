@@ -90,7 +90,9 @@ public class ShopActivity extends AppCompatActivity {
                         .setPositiveButton("OUI ", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Common.currentUser.setNombreCmd(Common.currentUser.getNombreCmd()+1);
+                                if( Common.currentUser!=null) {
+                                    Common.currentUser.setNombreCmd(Common.currentUser.getNombreCmd() + 1);
+                                }
                                 notificationSet();
                                 finish();
                             }
@@ -105,7 +107,6 @@ public class ShopActivity extends AppCompatActivity {
                         .show();
             }
         });
-        /*onLoad();*/
     }
 
 
@@ -198,9 +199,15 @@ public class ShopActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if( item.getItemId() == action_account){
-            Log.i("Action_Account", "In action Account ");
-            Intent sartItent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(sartItent);
+            if(Common.currentUser !=null ) {
+                Log.i("Action_Account", "In action Account ");
+                Intent sartItent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(sartItent);
+            }
+            else{
+                Toast.makeText(ShopActivity.this, "Vous êtes pas connecté ! ",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (item.getItemId() == action_caddy){
             Log.i("Action_Caddy", "In action Caddy ");
@@ -219,6 +226,7 @@ public class ShopActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.action_deconexion){
             Log.i("Action_Home", "In Other Options ");
+            Common.Pop=false;
             Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
             startActivity(sartItent);
         }

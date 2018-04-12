@@ -36,7 +36,10 @@ public class Popup extends Activity {
         textTitleHello.setTypeface(myCust);
         Intent intent = getIntent();
         String name = intent.getStringExtra(EXTRA_USER_NAME);
-        textCurentUser.setText(name.toString());
+        if(name != null || name!="") {
+            textCurentUser.setText(name.toString());
+        }
+
         myCust= Typeface.createFromAsset(getAssets(),"fonts/FunSized.ttf");
         //textCurentUser.setTypeface(myCust);
         int width = (int)((dm.widthPixels)*0.5);

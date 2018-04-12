@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Authentification extends AppCompatActivity {
 
-    Button btnSignIn;
+    Button btnSignIn,voirSimplement;
     EditText editId,editPassword;
     public  static  final  String EXTRA_USER_NAME ="Image";
 
@@ -32,6 +32,7 @@ public class Authentification extends AppCompatActivity {
         editId = (EditText) findViewById(R.id.editId);
         editPassword = (EditText) findViewById(R.id.editPassword);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        voirSimplement= (Button) findViewById(R.id.voirSimple);
 
         //initFireBase
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -47,25 +48,32 @@ public class Authentification extends AppCompatActivity {
 
                         //Check if user not exits in database
                         Log.i("test BDD", ""+dataSnapshot.child(editId.getText().toString()).exists() );
+                        if(editId.getText()!= null) {
+                            if (dataSnapshot.child(editId.getText().toString()).exists()) {
+                                //get user infotmation
+                                User userTmp = dataSnapshot.child(editId.getText().toString()).getValue(User.class);
+                                Log.i("USER", "USER" + userTmp.getAdresse().toString());
+                                if (userTmp.getPassword().equals(editPassword.getText().toString())) {
 
-                        if(dataSnapshot.child(editId.getText().toString()).exists()){
-                            //get user infotmation
-                            User userTmp = dataSnapshot.child(editId.getText().toString()).getValue(User.class);
-                            Log.i("USER", "USER"+userTmp.getAdresse().toString());
-                            if (userTmp.getPassword().equals(editPassword.getText().toString())) {
-
-                                Toast.makeText(Authentification.this, "Sign in successfully",
-                                        Toast.LENGTH_SHORT).show();
-                                startHomeIntent(userTmp);
-                                finish();
+                                    Toast.makeText(Authentification.this, "Sign in successfully",
+                                            Toast.LENGTH_SHORT).show();
+                                    startHomeIntent(userTmp);
+                                    finish();
+                                } else {
+                                    Toast.makeText(Authentification.this, "Wrong password !!",
+                                            Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                Toast.makeText(Authentification.this, "Wrong password !!",
+                                Toast.makeText(Authentification.this, "User not exit in DataBase",
                                         Toast.LENGTH_SHORT).show();
+                                Intent sartItent = new Intent(getApplicationContext(), Authentification.class);
+                                startActivity(sartItent);
                             }
-                        }
-                        else{
-                            Toast.makeText(Authentification.this, "User not exit in DataBase",
+                        }else{
+                            Toast.makeText(Authentification.this, "Veulliez saisir un ID et le votre mot passe SVP ",
                                     Toast.LENGTH_SHORT).show();
+                            Intent sartItent = new Intent(getApplicationContext(), Authentification.class);
+                            startActivity(sartItent);
                         }
                     }
 
@@ -75,6 +83,17 @@ public class Authentification extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        voirSimplement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(Authentification.this, "Simple Connexion ",
+                        Toast.LENGTH_SHORT).show();
+                Intent sartItent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(sartItent);
             }
         });
     }
