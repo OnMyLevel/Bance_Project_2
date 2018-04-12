@@ -88,6 +88,12 @@ public class Droit extends AppCompatActivity {
             Intent sartItent = new Intent(getApplicationContext(),Droit.class);
             startActivity(sartItent);
         }
+        else if (item.getItemId() == R.id.action_deconexion){
+            Log.i("Action_Home", "In Other Options ");
+            Common.Pop=false;
+            Intent sartItent = new Intent(getApplicationContext(),Authentification.class);
+            startActivity(sartItent);
+        }
         else if (item.getItemId() == R.id.action_home){
             Log.i("Action_Home", "In Other Options ");
             Intent sartItent = new Intent(getApplicationContext(),HomeActivity.class);
